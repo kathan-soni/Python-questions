@@ -1,17 +1,20 @@
-import math
-n = int(input("enter the number"))
-list = []
-# Iterate over numbers from 2 to n (100)
-for i in range(2, n + 1):
-    is_prime = True  # Assume the number is prime
+n = int(input("Enter the number: "))
 
-    # Check for factors from 2 to i / 2
-    for j in range(2, int(math.sqrt(i))+1):
-        if i % j == 0:
+# Assume the number is prime unless proven otherwise
+is_prime = True  
+
+# Handle cases for numbers less than 2
+if n < 2:
+    is_prime = False
+else:
+    # Check for factors from 2 to n-1
+    for i in range(2, n):
+        if n % i == 0:
             is_prime = False  # Number is not prime
             break
-    
-    # Print the number if it's prime
-    if is_prime:
-        list.append(i)
-print(list)
+
+# Print the result
+if is_prime:
+    print(f"{n} is a prime number.")
+else:
+    print(f"{n} is not a prime number.")
