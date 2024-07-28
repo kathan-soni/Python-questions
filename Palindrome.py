@@ -9,13 +9,14 @@ class Solution(object):
         while start < end:
             if str_x[start] != str_x[end]:
                 return False
+            else:
 
-            start +=1
-            end -=1
+                start +=1
+                end -=1
         return True
 
 solution = Solution()
-x = 121
+x = int(input("enter the number : "))
 result = solution.isPalindrome(x)
 print(result)
         
